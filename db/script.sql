@@ -6,7 +6,8 @@ CREATE TABLE heroes (
     skill VARCHAR(100) NOT NULL,
     power INT NOT NULL,
     level SMALLINT NOT NULL,
-    health INT NOT NULL
+    health INT NOT NULL,
+    winsCounter INT
 );
 
 CREATE TABLE battles (
