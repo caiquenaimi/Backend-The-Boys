@@ -1,6 +1,6 @@
 # Backend The Boys
 
-[![Capa do Projeto](https://cinepop.com.br/wp-content/uploads/2022/04/the-boys-3a-termporada-2.jpg)](https://github.com/caiquenaimi/Backend-The-Boys)
+[![Capa do Projeto](https://m.media-amazon.com/images/S/pv-target-images/473fd8bc878799c1a035cb13c688edd9eb6d240d426abf34e0bf3c1dde95724b.jpg)](https://github.com/caiquenaimi/Backend-The-Boys)
 
 Este é o repositório de um projeto completo que envolve o desenvolvimento de uma API do universo da série The Boys. O projeto, construído utilizando tecnologias avançadas como Express.js, PostgreSQL e Node.js, tem como propósito fornecer aos fãs um guia interativo e informativo que cubra todos os aspectos do Super Mundo de The Boys. Este guia oferece detalhes abrangentes sobre os personagens da série, explorando suas origens, habilidades e batalhas entre personagens.
 
