@@ -263,11 +263,13 @@ app.get("/battles", async (req, res) => {
                    winner.power AS winner_power,
                    winner.level AS winner_level,
                    winner.health AS winner_health,
+                   winner.winscounter AS winner_winscounter,
                    loser.name AS loser_name, 
                    loser.skill AS loser_skill,
                    loser.power AS loser_power,
                    loser.level AS loser_level,
-                   loser.health AS loser_health
+                   loser.health AS loser_health,
+                   loser.winscounter AS loser_winscounter
             FROM battles
             INNER JOIN heroes AS winner ON battles.winner_id = winner.id
             INNER JOIN heroes AS loser ON battles.loser_id = loser.id
