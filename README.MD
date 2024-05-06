@@ -5,7 +5,7 @@
 Este é o repositório de um projeto completo que envolve o desenvolvimento de uma API do universo da série The Boys. O projeto, construído utilizando tecnologias avançadas como Express.js, PostgreSQL e Node.js, tem como propósito fornecer aos fãs um guia interativo e informativo que cubra todos os aspectos do Super Mundo de The Boys. Este guia oferece detalhes abrangentes sobre os personagens da série, explorando suas origens, habilidades e batalhas entre personagens.
 
 ## Visão Geral
-Este é um projeto simples de backend desenvolvido com Express.js e PostgreSQL. Ele fornece uma API para gerenciar informações de herois incluindo id, nome, poderes, força, nível e vida. E batalhas incluindo id, hero1_id, hero2_id, winner_id, loser_id suas chaves estrangeiras.
+Este é um projeto simples de backend desenvolvido com Express.js e PostgreSQL. Ele fornece uma API para gerenciar informações de herois incluindo id, nome, poderes, força, nível, vida e contador de vitórias. E batalhas incluindo id, hero1_id, hero2_id, winner_id, loser_id suas chaves estrangeiras.
 
 ## Pré-requisitos
 
