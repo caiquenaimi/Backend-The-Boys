@@ -8,8 +8,8 @@ const pool = new Pool({
   user: "postgres",
   host: "localhost",
   database: "theboys",
-  password: "caique2006",
-  port: 5432,
+  password: "ds564",
+  port: 7007,
 });
 
 app.use(express.json());
@@ -61,7 +61,7 @@ app.get("/heroes/:id", async (req, res) => {
   }
 });
 
-app.get("/heroes/name/:name", async (req, res) => {
+app.get("/heroes/:name", async (req, res) => {
   try {
     const { name } = req.params;
     const result = await pool.query(
@@ -285,6 +285,51 @@ app.get("/battles", async (req, res) => {
     res.status(500).send({
       status: "error",
       message: "Erro ao buscar batalhas",
+    });
+  }
+});
+
+
+app.get("/battles/:name", async (req, res) => {
+  try {
+    const { name } = req.params;
+    const result = await pool.query(`
+            SELECT battles.id, 
+                   battles.winner_id, 
+                   battles.loser_id, 
+                   winner.name AS winner_name, 
+                   winner.skill AS winner_skill,
+                   winner.power AS winner_power,
+                   winner.level AS winner_level,
+                   winner.health AS winner_health,
+                   winner.winscounter AS winner_winscounter,
+                   loser.name AS loser_name, 
+                   loser.skill AS loser_skill,
+                   loser.power AS loser_power,
+                   loser.level AS loser_level,
+                   loser.health AS loser_health,
+                   loser.winscounter AS loser_winscounter
+            FROM battles
+            INNER JOIN heroes AS winner ON battles.winner_id = winner.id
+            INNER JOIN heroes AS loser ON battles.loser_id = loser.id
+            WHERE LOWER(winner.name) LIKE $1 OR LOWER(loser.name) LIKE $1
+        `, [`%${name.toLowerCase()}%`]);
+    if (result.rowCount === 0) {
+      res.json({
+        status: "error",
+        message: `Batalha com nome ${name} não encontrado`,
+      });
+    }
+    res.json({
+      status: "success",
+      message: "Batalha encontrada",
+      batalha: result.rows,
+    });
+  } catch (error) {
+    console.error("Erro ao buscar batalha", error);
+    res.status(500).send({
+      status: "error",
+      message: "Erro ao buscar batalha",
     });
   }
 });
